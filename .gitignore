@@ -1,0 +1,49 @@
+# Compiled Source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+*.pyo
+
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+
+#*.jar
+#*.rar
+#*.tar
+#*.zip
+
+# Logs and databases #
+######################
+*.log
+
+# Image assets #
+################
+*.jpg
+*.gif
+*.png
+*.svg
+*.ico
+
+# Audio #
+#########
+*.wav
+*.mp3
+*.wma
+
+# Fonts # 
+#########
+*.eot
+*.ttf
+*.woff
+
+ 
