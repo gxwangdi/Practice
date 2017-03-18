@@ -1,1 +1,10 @@
-/bin/
+# Generated files
+gen/
+bin/
+
+# Java class file
+*.class
+
+# Eclipse Project config file
+.classpath
+.project
