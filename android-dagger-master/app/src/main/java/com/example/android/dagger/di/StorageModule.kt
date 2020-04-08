@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package com.example.android.dagger
+package com.example.android.dagger.di
 
-import com.example.android.dagger.di.AppComponent
-import com.example.android.dagger.di.DaggerTestAppComponent
+import com.example.android.dagger.storage.SharedPreferencesStorage
+import com.example.android.dagger.storage.Storage
+import dagger.Binds
+import dagger.Module
 
-/**
- * MyTestApplication will override MyApplication in android tests
- */
-class MyTestApplication : MyApplication() {
+// Tells Dagger this is a Dagger module
+@Module
+abstract class StorageModule {
 
-    override fun initializeComponent(): AppComponent {
-        // Creates a new TestAppComponent that injects fakes types
-        return DaggerTestAppComponent.create()
-    }
+    // Makes Dagger provide SharedPreferencesStorage when a Storage type is requested
+    @Binds
+    abstract fun provideStorage(storage: SharedPreferencesStorage): Storage
 }

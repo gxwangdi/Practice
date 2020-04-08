@@ -14,18 +14,11 @@
  * limitations under the License.
  */
 
-package com.example.android.dagger
+package com.example.android.dagger.user
 
-import com.example.android.dagger.di.AppComponent
-import com.example.android.dagger.di.DaggerTestAppComponent
+import javax.inject.Scope
 
-/**
- * MyTestApplication will override MyApplication in android tests
- */
-class MyTestApplication : MyApplication() {
-
-    override fun initializeComponent(): AppComponent {
-        // Creates a new TestAppComponent that injects fakes types
-        return DaggerTestAppComponent.create()
-    }
-}
+@Scope
+@MustBeDocumented
+@Retention(value = AnnotationRetention.RUNTIME)
+annotation class LoggedUserScope

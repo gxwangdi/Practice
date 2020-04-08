@@ -14,18 +14,24 @@
  * limitations under the License.
  */
 
-package com.example.android.dagger
+package com.example.android.dagger.login
 
-import com.example.android.dagger.di.AppComponent
-import com.example.android.dagger.di.DaggerTestAppComponent
+import com.example.android.dagger.di.ActivityScope
+import dagger.Subcomponent
 
-/**
- * MyTestApplication will override MyApplication in android tests
- */
-class MyTestApplication : MyApplication() {
+// Scope annotation that the LoginComponent uses
+// Classes annotated with @ActivityScope will have a unique instance in this Component
+@ActivityScope
+// Definition of a Dagger subcomponent
+@Subcomponent
+interface LoginComponent {
 
-    override fun initializeComponent(): AppComponent {
-        // Creates a new TestAppComponent that injects fakes types
-        return DaggerTestAppComponent.create()
+    // Factory to create instances of LoginComponent
+    @Subcomponent.Factory
+    interface Factory {
+        fun create(): LoginComponent
     }
+
+    // Classes that can be injected by this Component
+    fun inject(activity: LoginActivity)
 }

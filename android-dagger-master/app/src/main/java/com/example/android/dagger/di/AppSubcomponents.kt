@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package com.example.android.dagger
+package com.example.android.dagger.di
 
-import com.example.android.dagger.di.AppComponent
-import com.example.android.dagger.di.DaggerTestAppComponent
+import com.example.android.dagger.login.LoginComponent
+import com.example.android.dagger.registration.RegistrationComponent
+import com.example.android.dagger.user.UserComponent
+import dagger.Module
 
-/**
- * MyTestApplication will override MyApplication in android tests
- */
-class MyTestApplication : MyApplication() {
-
-    override fun initializeComponent(): AppComponent {
-        // Creates a new TestAppComponent that injects fakes types
-        return DaggerTestAppComponent.create()
-    }
-}
+// This module tells a Component which are its subcomponents
+@Module(
+    subcomponents = [
+        RegistrationComponent::class,
+        LoginComponent::class,
+        UserComponent::class
+    ]
+)
+class AppSubcomponents
