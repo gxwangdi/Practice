@@ -37,5 +37,13 @@ class DemoApplicationTests {
 			.andExpect(status().isOk())
 			.andExpect(content().string(containsString("Greetings message")));
 	}
+	
+	@Test
+	void testRest() throws Exception {
+		mockMvc.perform(get("/rest"))
+		.andDo(print())
+		.andExpect(status().isOk())
+		.andExpect(content().string(containsString("Hello REST")));
+	}
 
 }
