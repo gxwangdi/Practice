@@ -46,4 +46,8 @@
 *.ttf
 *.woff
 
- 
+# SpringToolSuite #
+/.metadata/
+/**/.mvn/**
+/**/mvn* 
+
