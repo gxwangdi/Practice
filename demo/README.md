@@ -15,3 +15,6 @@ spring.datasource.password=${password}
 #logging.level.root=WARN
 "
 
+JUnit Tests for Spring Data JPA Demo: https://www.youtube.com/watch?v=1kLwwsfghgE 
+
+
