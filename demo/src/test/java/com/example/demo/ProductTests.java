@@ -8,7 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 //import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -20,6 +23,7 @@ import com.example.demo.repositories.ProductRepository;
 
 @DataJpaTest
 //@AutoConfigureTestDatabase(replace = Replace.NONE)
+@TestMethodOrder(OrderAnnotation.class)
 public class ProductTests {
 
 	@Autowired
@@ -27,6 +31,7 @@ public class ProductTests {
 	
 	@Test
 	@Rollback(false)
+	@Order(1)
 	public void testCreateProduct() {
 		Product product = new Product("iPhone 10", 789);
 		Product savedProduct = repo.save(product);
@@ -35,6 +40,7 @@ public class ProductTests {
 	}
 	
 	@Test
+	@Order(2)
 	public void testFindProductByName() {
 		String name = "iPhone 10";
 		Product product = repo.findByName(name);
@@ -43,6 +49,7 @@ public class ProductTests {
 	}
 	
 	@Test
+	@Order(3)
 	public void testFindProductByNameNotExists() {
 		String name = "iPhone 11";
 		Product product = repo.findByName(name);
@@ -52,6 +59,7 @@ public class ProductTests {
 	
 	@Test
 	@Rollback(false)
+	@Order(4)
 	public void testUpdateProduct() {
 		String productName = "Kindle Reader";
 		Product product = new Product(productName, 199);
@@ -64,6 +72,7 @@ public class ProductTests {
 	}
 	
 	@Test
+	@Order(5)
 	public void testListProducts() {
 		List<Product> products = (List<Product>) repo.findAll();
 		for (Product product : products) {
@@ -74,6 +83,7 @@ public class ProductTests {
 	}
 	
 	@Test
+	@Order(6)
 	public void testDeleteProduct() {
 		Integer id = 1;
 		boolean presentBefore = repo.findById(id).isPresent();
