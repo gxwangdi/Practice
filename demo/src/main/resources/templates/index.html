@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Note that thymealeaf xmlns is only available in resources/templates.-->
 <html xmlns:th="http://www.thymealeaf.org">
 <head>
 <meta charset="UTF-8">
@@ -7,16 +8,15 @@
 	p {text-align: center;}
 	div {text-align: center;}
 </style>
-<title>Spring Demo Hello World Page</title>
+<title>Spring Demo Index Page</title>
 </head>
 <body>
+
 	<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
 	<form th:action="@{/Logout}" method="post">
 		<input type="submit" value="Logout"/>
 	</form>
-	<h1>Hello World!</h1>
-	<p th:text="${message}"/>
-	<br/>
-	<div><a href="rest">Call REST</a></div>
+	<h1>Spring Boot with STS4</h1>
+	<div><a href="hello">Say Hello</a></div>
 </body>
 </html>
