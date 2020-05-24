@@ -6,4 +6,5 @@ import com.example.demo.entities.Product;
 
 public interface ProductRepository extends CrudRepository<Product, Integer> {
 
+	public Product findByName(String name);
 }
