@@ -62,6 +62,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+   			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

@@ -35,11 +35,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		 * */
 //		super.configure(http);
 		http.authorizeRequests()
+			// Only ADMIN and access /edit/* or /delete/* pages.
+			.antMatchers("/edit/*", "/delete/*").hasRole("ADMIN")
 			.anyRequest().authenticated()
 			.and()
 			.formLogin().permitAll()
 			.and()
-			.logout().permitAll();
+			.logout().permitAll()
+			.and()
+			.exceptionHandling().accessDeniedPage("/403");
 	}
 	
 	
