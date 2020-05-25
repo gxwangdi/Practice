@@ -15,6 +15,9 @@ spring.datasource.password=${password}
 #logging.level.root=WARN
 "
 
+Java Spring JdbcTemplate Demo: https://www.youtube.com/watch?v=c5PKszLSXrY 
+
+
 JUnit Tests for Spring Data JPA Demo: https://www.youtube.com/watch?v=1kLwwsfghgE 
 
 
