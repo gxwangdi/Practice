@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--Note that thymealeaf xmlns is only available in resources/templates.-->
+<html xmlns:th="http://www.thymealeaf.org">
+<head>
+<meta charset="UTF-8">
+<style>
+	h1 {text-align: center;}
+	p {text-align: center;}
+	div {text-align: center;}
+</style>
+<title>Spring Demo Index Page</title>
+</head>
+<body>
+
+	<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+	<form th:action="@{/Logout}" method="post">
+		<input type="submit" value="Logout"/>
+	</form>
+	<h1>Spring Boot with STS4</h1>
+	<div><a href="hello">Say Hello</a></div>
+</body>
+</html>
