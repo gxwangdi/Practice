@@ -11,7 +11,7 @@ Spring Boot Thymeleaf Form Handling Demo: https://www.youtube.com/watch?v=-IMvhB
 
 JUnit Tests for Spring Data JPA Demo: https://www.youtube.com/watch?v=1kLwwsfghgE 
 
-
+Spring Boot Custom Error Pages Demo: https://www.youtube.com/watch?v=YW5AqKI9w-0 
 
 
 ==============
