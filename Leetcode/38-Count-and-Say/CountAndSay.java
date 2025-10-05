@@ -1,0 +1,27 @@
+public class CountAndSay {
+    public String countAndSay(int n) {
+        if (n<=0) return null;
+        int i=1;
+        String res = "1";
+        
+        while (i<n) {
+            StringBuilder sb = new StringBuilder(res.length()+1);
+            int count = 1;
+            for (int j=1; j<res.length(); j++) {
+                if (res.charAt(j) == res.charAt(j-1)) {
+                    count ++;
+                } else {
+                    sb.append(count);
+                    sb.append(res.charAt(j-1));
+                    count = 1;
+                }
+            }
+            sb.append(count);
+            sb.append(res.charAt(res.length()-1));
+            // Pay attention to last char
+            res = sb.toString();
+            i++;
+        }
+        return res;
+    }
+}

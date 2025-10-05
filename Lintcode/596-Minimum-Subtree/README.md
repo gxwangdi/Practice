@@ -1,0 +1,8 @@
+
+grandfather
+|
+father
+| \
+left right
+
+
